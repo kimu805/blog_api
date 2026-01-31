@@ -10,5 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 0) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_31_063548) do
+  create_table "articles", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "body", null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "published_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["published_at"], name: "index_articles_on_published_at"
+    t.index ["status"], name: "index_articles_on_status"
+  end
 end

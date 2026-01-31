@@ -72,6 +72,9 @@ RSpec.configure do |config|
 
   # FactoryBot methods (create, build, build_stubbed, attributes_for)
   config.include FactoryBot::Syntax::Methods
+
+  # ActiveSupport time helpers (freeze_time, travel_to, etc.)
+  config.include ActiveSupport::Testing::TimeHelpers
 end
 
 Shoulda::Matchers.configure do |config|
